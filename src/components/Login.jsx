@@ -29,19 +29,19 @@ function Login() {
 	};
 
 	return (
-		<div className="flex items-center justify-center w-full">
+		<div className="flex items-center justify-center w-full ">
 			<div
-				className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
+				className={`mx-auto mt-20 min-h-[400px] flex flex-col justify-between w-full max-w-lg bg-slate-800 text-white  rounded-xl p-8 shadow-custom`}
 			>
-				<div className="mb-2 flex justify-center">
-					<span className="inline-block w-full max-w-[100px]">
-						<p>Logo</p>
+				{/* <div className="mb-2 flex justify-center">
+					<span className=" p-2 w-2/3 font-semibold text-center">
+						<p className="text-2xl">ToDoSomething</p>
 					</span>
-				</div>
-				<h2 className="text-center text-2xl font-bold leading-tight">
+				</div> */}
+				<h2 className="text-center text-3xl font-bold leading-tight">
 					Sign in to your account
 				</h2>
-				<p className="mt-2 text-center text-base text-black/60">
+				<p className=" text-center text-xl text-white">
 					Don&apos;t have any account?&nbsp;
 					<Link
 						to="/signup"
@@ -54,11 +54,12 @@ function Login() {
 					<p className="text-red-600 mt-8 text-center">{error}</p>
 				)}
 				<form onSubmit={handleSubmit(login)} className="mt-8">
-					<div className="space-y-5 flex flex-col">
-						<div className="flex gap-8 items-center">
+					<div className="space-y-5 flex p-2 flex-col">
+						<div className="flex gap-8 text-xl items-center  justify-between">
 							<label htmlFor="">Email</label>
 							<input
 								type="email"
+								className="px-2 p-1 outline-none bg-[#290529] rounded-sm w-2/3"
 								placeholder="Enter your email"
 								{...register("email", {
 									required: true,
@@ -72,17 +73,21 @@ function Login() {
 								})}
 							/>
 						</div>
-						<div className="flex gap-8 items-center">
+						<div className="flex gap-8 text-xl items-center justify-between">
 							<label htmlFor="">Password</label>
 							<input
 								type="password"
+								className="p-1 px-2 outline-none bg-[#290529] rounded-sm w-2/3"
 								placeholder="Enter your password"
 								{...register("password", {
 									required: true,
 								})}
 							/>
 						</div>
-						<button type="submit" className="w-full">
+						<button
+							type="submit"
+							className="w-1/2 mx-auto p-2 shadow-custom font-semibold bg-[#230427] text-xl rounded-md"
+						>
 							Sign in
 						</button>
 					</div>

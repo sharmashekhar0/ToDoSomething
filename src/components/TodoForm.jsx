@@ -19,7 +19,7 @@ function TodoForm() {
 	}
 
 	return (
-		<div className="h-32 w-2/3 flex items-center justify-center mx-auto mt-5 rounded bg-slate-800">
+		<div className="h-32 w-2/3 flex items-center justify-center mx-auto mt-20 rounded bg-slate-800 shadow-custom">
 			<div className="flex h-full w-full items-center justify-center">
 				<form
 					onSubmit={handleSubmit(addTodoHandler)}
@@ -28,14 +28,14 @@ function TodoForm() {
 					<input
 						type="text"
 						placeholder="Enter Your Task"
-						className="h-12 outline-none px-4 rounded-s-sm text-xl w-2/3 bg-slate-700 text-white"
+						className="h-12 outline-none font-semibold px-4 rounded-s-sm text-xl w-2/3 bg-slate-700 text-white shadow-custom"
 						{...register("text", {
 							required: true,
 						})}
 					/>
 					<button
 						type="submit"
-						className="bg-slate-900 text-white text-2xl w-1/12 rounded-e-sm"
+						className="bg-slate-900 font-bold shadow-custom text-white text-2xl w-2/12 rounded-e-sm"
 					>
 						Add
 					</button>

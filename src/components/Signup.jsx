@@ -28,17 +28,17 @@ function Signup() {
 	return (
 		<div className="flex items-center justify-center">
 			<div
-				className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
+				className={`mx-auto mt-20 w-full max-w-lg bg-slate-800 min-h-[400px] flex flex-col justify-between text-white rounded-xl px-8 py-6 `}
 			>
-				<div className="mb-2 flex justify-center">
+				{/* <div className="mb-2 flex justify-center">
 					<span className="inline-block w-full max-w-[100px]">
 						<p>Logo</p>
 					</span>
-				</div>
-				<h2 className="text-center text-2xl font-bold leading-tight">
+				</div> */}
+				<h2 className="text-center text-3xl font-bold leading-tight">
 					Sign up to create account
 				</h2>
-				<p className="mt-2 text-center text-base text-black/60">
+				<p className="text-center text-xl text-white">
 					Already have an account?&nbsp;
 					<Link
 						to="/login"
@@ -52,22 +52,24 @@ function Signup() {
 				)}
 
 				<form onSubmit={handleSubmit(create)}>
-					<div className="space-y-5">
-						<div>
+					<div className="space-y-5 flex p-2 flex-col">
+						<div className="flex gap-8 text-xl items-center  justify-between">
 							<label htmlFor="">Full Name</label>
 							<input
 								type="text"
+								className="px-2 p-1 outline-none bg-[#290529] rounded-sm w-2/3"
 								placeholder="Enter your full name"
 								{...register("name", {
 									required: true,
 								})}
 							/>
 						</div>
-						<div>
+						<div className="flex gap-8 text-xl items-center justify-between">
 							<label htmlFor="">Email</label>
 							<input
 								type="email"
 								placeholder="Enter your email"
+								className="p-1 px-2 outline-none bg-[#290529] rounded-sm w-2/3"
 								{...register("email", {
 									required: true,
 									validate: {
@@ -80,20 +82,24 @@ function Signup() {
 								})}
 							/>
 						</div>
-						<div>
+						<div className="flex gap-8 text-xl items-center justify-between">
 							<label htmlFor="">Password</label>
 							<input
 								type="password"
+								className="p-1 px-2 outline-none bg-[#290529] rounded-sm w-2/3"
 								placeholder="Enter your Password"
 								{...register("password", {
 									required: true,
 								})}
 							/>
 						</div>
+						<button
+							type="submit"
+							className="w-1/2 mx-auto p-2 shadow-custom font-semibold bg-[#230427] text-xl rounded-md"
+						>
+							Create Account
+						</button>
 					</div>
-					<button type="submit" className="w-full">
-						Create Account
-					</button>
 				</form>
 			</div>
 		</div>
